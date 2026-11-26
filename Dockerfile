@@ -10,7 +10,7 @@ FROM eclipse-temurin:17-jdk
 ARG JAR_FILE=target/*.jar
 
 # Projenin jar halini dockerın içine şu isimle kopyala
-COPY ${JAR_FILE} devops-hello-app.jar
+COPY ${JAR_FILE} my-application.jar
 
 # Terminal Komutları
 CMD apt-get upgrade -y
@@ -19,6 +19,6 @@ CMD apt-get upgrade -y
 EXPOSE 8080
 
 # uygulamanın çalışacağı komut
-ENTRYPOINT ["java", "-jar", "devops-hello-app.jar"]
+ENTRYPOINT ["java", "-jar", "my-application.jar"]
 
 
